@@ -29,9 +29,10 @@
           {{ user.username }}
         </a>
         <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-          <li><a class="dropdown-item" href="{% url 'password_change' %}">
-              Change password</a></li>
-          <li><a class="dropdown-item" href="{% url 'logout' %}">Log Out</a></li>
+          <li><form method="post"  action="{% url 'logout' %}" style="text-align: center;"> 
+            {% csrf_token %} 
+            <button type="submit" class="btn btn-primary btn-lg" >Log out</button> 
+          </form> </li>
         </ul>
       </div>
       {% else %}
@@ -57,5 +58,4 @@
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
 </body>
-
 </html>
