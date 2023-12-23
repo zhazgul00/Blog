@@ -5,3 +5,7 @@ from .serializers import BlogSerializer
 class BlogAPIView(generics.ListAPIView):
     queryset = Post.objects.all()
     serializer_class = BlogSerializer
+    
+class BlogApiDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Post.objects.all()
+    serializer_class = BlogSerializer
